@@ -132,13 +132,13 @@ footer {
 .profile-header span {
     display: block;
     font-size: 1.2rem;
-    colour: #ed1b76;
+    color: #ed1b76;
     font-weight: bold;
     margin-top: 5px;
 }
 
 .bio-content h3 {
-    colour: #2eb872;
+    color: #2eb872;
     margin-top: 25px;
     margin-bottom: 10px;
     border-left: 4px solid #ed1b76;
