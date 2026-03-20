@@ -1,42 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('cast-container');
     
-    // Function to create a card element
-    function createCard(actor) {
+    const container = document.getElementById('cast-container');
+    const loadingMsg = document.getElementById('loading-msg');
+
+    function createActorCard(actor) {
         const card = document.createElement('div');
         card.className = 'cast-card';
-        
-        const playerNum = actor.playerNumber ? `Player ${actor.playerNumber}` : 'Staff / Other';
+        const playerDisplay = actor.playerNumber ? `Player ${actor.playerNumber}` : 'Staff / Other';
         
         card.innerHTML = `
             <h3>${actor.name}</h3>
-            <p class="role"><strong>Role:</strong> ${actor.characterName} (${playerNum})</p>
+            <p class="role"><strong>Character:</strong> ${actor.characterName}</p>
+            <p class="role-number"><strong>ID:</strong> ${playerDisplay}</p>
             <p class="bio">${actor.bio}</p>
         `;
-        
         return card;
     }
 
-    // Fetch data from JSON
-    fetch('actors.json')
+    fetch('../actors.json') 
         .then(response => {
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                throw new Error(`HTTP error! Status: ${response.status}`);
             }
             return response.json();
         })
         .then(data => {
-            // Clear loading message
-            container.innerHTML = '';
+            if (loadingMsg) loadingMsg.style.display = 'none';
             
-            // Loop through data and append cards
             data.forEach(actor => {
-                const card = createCard(actor);
-                container.appendChild(card);
+                container.appendChild(createActorCard(actor));
             });
         })
         .catch(error => {
-            console.error('Error fetching cast data:', error);
-            container.innerHTML = `<p class="error-message">Unable to load cast list at this time. Please try refreshing the page.</p>`;
+            console.error('Error fetching cast list:', error);
+            if (loadingMsg) {
+                loadingMsg.textContent = "Error loading data. Check console (F12). Ensure you are using a Local Server.";
+                loadingMsg.style.color = "#d32f2f";
+                loadingMsg.style.fontWeight = "bold";
+            }
         });
 });
