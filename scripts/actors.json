@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Lee Jung-jae",
+    "characterName": "Seong Gi-hun",
+    "playerNumber": "456",
+    "bio": "A divorced father and gambling addict who enters the games to pay off his debts. He wins the competition but is left traumatised by the loss of his friends."
+  },
+  {
+    "name": "Park Hae-soo",
+    "characterName": "Cho Sang-woo",
+    "playerNumber": "218",
+    "bio": "Gi-hun's childhood friend and a brilliant investment team leader. He is pragmatic and willing to make ruthless decisions to survive."
+  },
+  {
+    "name": "Wi Ha-jun",
+    "characterName": "Hwang Jun-ho",
+    "playerNumber": null,
+    "bio": "A determined police officer who infiltrates the games disguised as a guard to find his missing brother. He uncovers the dark secrets of the organisation."
+  },
+  {
+    "name": "HoYeon Jung",
+    "characterName": "Kang Sae-byeok",
+    "playerNumber": "067",
+    "bio": "A North Korean defector who enters the games to secure money for her family. She is stoic, observant, and forms a close bond with Gi-hun."
+  },
+  {
+    "name": "Oh Young-su",
+    "characterName": "Oh Il-nam",
+    "playerNumber": "001",
+    "bio": "An elderly man with a brain tumour who appears frail but is surprisingly resilient. He is revealed to be the host and creator of the games."
+  }
+]
